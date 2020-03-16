@@ -1,0 +1,8 @@
+[
+  { "titre": "Nouvelles du département",
+    "url": "https://perso.liris.cnrs.fr/romuald.thion/files/Enseignement/LIFAP5/TP3/nouvelles.json" },
+  { "titre": "Autres nouvelles du département",
+      "url": "https://perso.liris.cnrs.fr/romuald.thion/files/Enseignement/LIFAP5/TP3/nouvelles_bis.json" },
+  { "titre": "Nouvelles inexistantes (doit provoquer une erreur)",
+    "url": "https://perso.liris.cnrs.fr/romuald.thion/files/Enseignement/LIFAP5/TP3/patate.json" }
+]
