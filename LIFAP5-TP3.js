@@ -15,7 +15,7 @@ const annuaireUrl = `${baseUrl}/annuaire.json`;
 
 // transforme une nouvelle en un item HTML à partir de son titre et de sa date
 function formate_titre(nouvelle) {
-  return `<li>${nouvelle.date}: ${nouvelle.titre}</li>`;
+  return `<li id="li-${nouvelles.id}">${nouvelles.date}: ${nouvelles.titre}<div id="ctn-${nouvelles.id}">${nouvelles.contenu}</div></li>`;
 }
 
 // transforme une liste de nouvelles en une énumération HTML
@@ -110,7 +110,15 @@ function maj_liste_nouvelles(nouvelles, mois, annee) {
   console.debug(`CALL maj_liste_nouvelles([${nouvelles}],${mois},${annee})`);
   const filtrees = filtre_mois_annee(nouvelles, mois, annee);
   const liste_html = liste_nouvelles_html(filtrees);
+
   document.getElementById("elt-nouvelles").innerHTML = liste_html;
+
+  const ctn_ids = filtrees.map((n) => 'ctn-' + n.id);
+  masque_affiche_contenu(ctn_ids);
+  const li_ids = filtrees.map((n) => 'li-' + n.id);
+  li_ids.map((id) => {
+    document.getElementById('li-' + id).onclick = () => masque_affiche_contenus(ctn_ids, 'ctn-' + id);
+  });
 }
 
 function maj_annees(nouvelles) {
@@ -188,11 +196,15 @@ function init_menus() {
   fetch(nouvellesUrl)
     .then((response) => response.json())
     .then((nouvelles) => {
+      nouvelles = nouvelles.map((n, i) => ({id: i, ...n})); // Quand on a un objet, si on utilise les ... = spread_operator. On fait une sorte de copie d'objet, et ici on dit qu'on créer un objet avec un id de i = {0, 1 ...} avec ttes les clés dans obj.
       eltNouvelles.innerHTML = liste_nouvelles_html(nouvelles);
       maj_annees(nouvelles);
       document.getElementById('select-annee').onchange = () => change_annee(nouvelles);
       // /!\ Si on met .onchange = change_annee(nouvelles) c'est KO /!\ 
-      document.getElementById('select-mois').onchange = () => change_mois(nouvelles);
+      document.getElementById('select-mois').onchange = () =>{
+
+      change_mois(nouvelles);
+    };
       // /!\ Pareil ! /!\
       change_annee(nouvelles); 
     });
