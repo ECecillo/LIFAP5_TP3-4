@@ -1,0 +1,21 @@
+[
+  { "titre":"CM3 : programmation fonctionnelle en js",
+    "date": "2017-02-27",
+    "contenu": "Ce cours introduit les notions de programmation avec des fonctions d'ordre supérieur.\n\nAprès avoir revu la définition de fonction, on abordera les fonctions renvoyées en résultat, ainsi que la l'utilisation de valeurs extérieures à la définition de la fonction.\n\nOutre la manipulation des fonctions commes objets de première classe, la notion de fermeture est un des principaux concepts à retenir de ce cours."},
+  
+  { "titre": "CM1 : introduction à js (1/2)",
+    "date": "2017-01-30",
+    "contenu": "Ce cours décrit les bases du langage JavaScript.\n\nOn y verra en particulier les valeurs, les types, les structures de tableau et de dictionnaire. Enfin on abordera la définition des fonctions et les méthodes." },
+  
+  { "titre": "CM2 : introduction à js (2/2)",
+    "date": "2017-02-06",
+    "contenu": "Ce cours poursuit la présentation du langage Javascript.\n\nDans ce cours, on abordera les APIs de chaînes de caractères et de tableaux, ainsi que les fonctions passées en argument."},
+  
+  { "titre": "CM4 : programmation asynchrone",
+    "date": "2017-03-06",
+    "contenu": "Ce cours aborde les notions de programmation asynchrone.\n\nAprès quelques notions fondamentales sur les fonction introduites via le lamnbda-calcul, ce cours abordera des constructions standard de programmation asynchrone, telle que les callbacks et les promesses."},
+
+  { "titre": "L'UE LIFAP5 est créée",
+    "date": "2016-09-01",
+    "contenu": "Création de l'UE LIFAP5: programmation fonctionnelle pour le Web.\n\nCette UE aborde la programmation fonctionnelle à travers Javascript et la programmation Web." }
+]
